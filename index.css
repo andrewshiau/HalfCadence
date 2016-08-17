@@ -39,17 +39,23 @@ body {
 .page {
   min-height: 100vh;
 }
+@media (min-width: 40rem) {
+  .page-large {
+    min-height: 100vh;
+  }
+}
 
 /* icon */
 a.icon {
   margin-left: auto;
   margin-right: auto;
+  line-height: 0;
 }
 
 /* divider */
-hr { /* darken divider for debug purposes */
+hr {
+  margin: 1em;
   border-top-color: #000;
-  margin: 1rem;
 }
 
 /* title */
@@ -62,7 +68,10 @@ hr { /* darken divider for debug purposes */
 h1 {
   font-family:Didot Bold;
   font-size: 10vw;
+}
+h1.title {
   text-align: center;
+  white-space: nowrap;
 }
 
 /* footer */
@@ -77,8 +86,15 @@ h1 {
 .fat-image { /* fat image */
   width: 100%;
 }
+
+.thin-image { /* thin image */
+  max-width: 80%;
+  max-height: 70vh;
+}
+
 h6 { /* h6 for project titles */
   font-weight: 700;
+  letter-spacing: 0.1px;
   font-size: 1.6rem;
 }
 ul { /* style lists */
@@ -91,13 +107,36 @@ li { /* remove bodding padding from lists */
   margin-bottom: 4rem !important;
 }
 
+/* about */
+@media (max-width: 40rem) {
+  #about .row { /* reverse flex box direction to put image on top */
+    flex-direction: column-reverse;
+  }
+}
+@media (min-width: 40rem) {
+  .thin-picture-text { /* move text down on large layouts */
+    text-align: right;
+  }
+  #about .row {
+    align-items: flex-end;
+  }
+}
+
+/* visible large or small */
+@media (min-width: 40rem) {
+  .visible-small {
+    display: none;
+  }
+}
+@media (max-width: 40rem) {
+  .visible-large {
+    display: none;
+  }
+}
+
 /* debug page color */
-#title {
-  background-color: rgba(255, 0, 255, 0.1);
+/*
+.container {
+  background-color: rgba(144, 0, 0, 0.2);
 }
-#create {
-  background-color: rgba(0, 255, 0, 0.1)
-}
-#about {
-  background-color: rgba(255, 0, 0, 0.1)
-}
+*/
