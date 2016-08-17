@@ -1,0 +1,103 @@
+/* background grey: #fafafa */
+
+/* didot */
+@font-face {
+  font-family: Didot Bold;
+  src: url(Didot-Bold.ttf);
+}
+
+/* vertically center something */
+.vertical-center {
+}
+
+* {
+  /*border: 1px solid rgba(255, 0, 0, 0.3);*/
+  color: #000;
+}
+
+/* body */
+body {
+  background-color: #fafafa;
+  line-height: 1.3;
+  font-weight: 400;
+}
+
+/* container */
+.container {
+  max-width
+}
+/* navigation */
+.navigation {
+  padding-top: 12vh;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* page */
+.page {
+  min-height: 100vh;
+}
+
+/* icon */
+a.icon {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* divider */
+hr { /* darken divider for debug purposes */
+  border-top-color: #000;
+  margin: 1rem;
+}
+
+/* title */
+.hc-center { /* center title */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  font-family:Didot Bold;
+  font-size: 10vw;
+  text-align: center;
+}
+
+/* footer */
+.footer { /* center footer text */
+  text-align: center;
+}
+.footer p { /* give top margin to footer text */
+  margin-top: 2.5rem;
+}
+
+/* work */
+.fat-image { /* fat image */
+  width: 100%;
+}
+h6 { /* h6 for project titles */
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+ul { /* style lists */
+  list-style: none;
+}
+li { /* remove bodding padding from lists */
+  margin-bottom: 0;
+}
+.column-photo { /* add space below photo */
+  margin-bottom: 4rem !important;
+}
+
+/* debug page color */
+#title {
+  background-color: rgba(255, 0, 255, 0.1);
+}
+#create {
+  background-color: rgba(0, 255, 0, 0.1)
+}
+#about {
+  background-color: rgba(255, 0, 0, 0.1)
+}
