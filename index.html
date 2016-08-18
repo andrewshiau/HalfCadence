@@ -16,29 +16,39 @@
 	</head>
 	<body>
 
+		<!-- icon -->
+		<svg style="display:none;">
+		  <symbol id="icon">
+		    <path fill-rule="evenodd" d="M0,0 L8,0 L8,8 L0,8 L0,0 Z
+		               M1,1 L7,1 L7,7 L1,7 L1,1 Z" />
+		    <path d="M2,2 L6,2 L6,6 L2,6 L2,2 Z" fill="currentColor" />
+		  </symbol>
+		</svg>
+
 		<main class="wrapper">
 
       <!-- sticky nav-bar -->
-			<nav class="navigation">
-				<section class="container">
-          <div class="row">
+			<nav class="navigation container visible-large">
+        <div class="row">
+					<div class="column column-10 column-offset-35 hc-center">
+            <a class="icon">About</a>
+					</div>
+					<div class="column column-10 hc-center">
             <a class="icon">
-              <svg viewBox="0 0 8 8" width="48" height="48">
-                <g fill-rule="evenodd">
-                    <path d="M0,0 L8,0 L8,8 L0,8 L0,0 Z
-                    	M1,1 L7,1 L7,7 L1,7 L1,1 Z
-                    	M2,2 L6,2 L6,6 L2,6 L2,2 Z">
-                    </path>
-                </g>
-                H
-              </svg>
+	          	<svg viewBox="0 0 8 8" width="48" height="48" class="icon">
+								<path fill-rule="evenodd" d="M0,0 L8,0 L8,8 L0,8 L0,0 Z M1,1 L7,1 L7,7 L1,7 L1,1 Z" />
+							  <path d="M2,2 L6,2 L6,6 L2,6 L2,2 Z" fill="currentColor" />
+							</svg>
             </a>
-          </div>
-				</section>
+					</div>
+					<div class="column column-10 hc-center">
+            <a class="icon">Work</a>
+					</div>
+        </div>
 			</nav>
 
       <!-- title -->
-      <section class="container page hc-center" id="title">
+      <section class="container page-large hc-center" id="title">
         <h1 class="title">half cadence</h1>
 			</section>
 
@@ -48,7 +58,8 @@
 			<section class="container page-large hc-center" id="create">
           <div class="row">
             <div class="column column-photo">
-              <img class="fat-image" src="./placeholderWide.png" alt="placeholder" title="Placeholder">
+							<div class="image-container fat-image-container create-photo">
+							</div>
             </div>
           </div>
           <div class="row">
@@ -83,7 +94,8 @@
 						</ul>
 					</div>
 					<div class="column">
-						<img class="thin-image visible-large" src="./mirrorSelfie.jpg" alt="placeholder" title="Placeholder">
+						<div class="image-container thin-image-container about-photo">
+						</div>
 					</div>
 				</div>
       </section>
