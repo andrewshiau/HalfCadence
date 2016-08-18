@@ -26,6 +26,12 @@ body {
   background-color: #fafafa;
   line-height: 1.3;
   font-weight: 400;
+  cursor: url(./cursor.svg) 15 15, auto;
+}
+
+/* use custom cursor on links */
+a {
+  cursor: url(./pointer.svg) 15 15, pointer !important;
 }
 
 /* container */
@@ -79,8 +85,7 @@ a.icon {
 }
 
 a.icon:active svg.icon{
-  fill: #fafafa;
-  color: transparent;
+  opacity: .2;
   transition: none; /* no transition when clicked */
 }
 .navigation:hover svg.icon, .navigation:hover a.icon {
@@ -110,6 +115,7 @@ h1.title {
   text-align: center;
   white-space: nowrap;
   margin-top: 20px;/* top margin to match, and for small screens */
+  pointer-events: none;
 }
 
 /* footer */
@@ -216,6 +222,8 @@ li { /* remove bodding padding from lists */
 .container {
   background-color: rgba(144, 0, 0, 0.2);
 }
+*/
+/*
 * {
   border: 1px solid rgba(255, 0, 0, 0.3);
 }
