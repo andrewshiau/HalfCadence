@@ -1,0 +1,17 @@
+.about-photo {
+  transform: scaleX(1);
+  background-color: black;
+  background-image: url("./assets/rightGrey.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+@media (min-width: 40rem) { /* change layout on large screens */
+  .thin-picture-text {
+    text-align: right;
+  }
+  #about .row {
+    flex-direction: row-reverse;
+    align-items: flex-end;
+  }
+}

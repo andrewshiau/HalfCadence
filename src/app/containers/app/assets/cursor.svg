@@ -1,3 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" width="30px" height="30px" fill="none" stroke="black" stroke-width="3px">
     <circle cx="18" cy="18" r="15"/>
 </svg>
+
+<!-- ratios
+viewbox: 0 0 12 12
+width / height: 10px
+stroke width: 1px
+center: (6,6)
+radius: 5
+-->

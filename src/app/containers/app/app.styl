@@ -1,0 +1,92 @@
+@import '../../theme/global'
+
+// didot
+@font-face
+  font-family Didot Bold
+  src url("./assets/Didot-Bold.ttf")
+
+//35% grid hack
+@media (min-width: 40.0rem)
+  .row .column.column-offset-35
+    margin-left 35%
+
+// flex-box stuff
+.hc-center
+  display flex !important
+  flex-direction column
+  justify-content center
+.hc-bottom
+  display flex !important
+  flex-direction column
+  justify-content flex-end
+
+// visible large or small
+@media (min-width 40rem)
+  .visible-small
+    display none
+@media (max-width 40rem)
+  .visible-large
+    display none
+
+// typography
+h6 // h6 for project titles
+  font-weight 700
+  letter-spacing 0.02em
+  font-size 1.6rem
+ul // style lists
+ list-style none
+li // remove bottom margin from lists
+ margin-bottom 0
+
+// customize selection
+::selection
+  background app-text-selection-color
+
+// cursor
+html
+  cursor url(./assets/cursor.svg) 15 15, auto
+
+body
+  background app-light-grey
+// body color
+#cad
+  color black
+  line-height 1.3
+  font-weight 400
+
+// larger fonts when large
+@media (min-width 40rem)
+  body
+    font-size 2rem
+  h6
+    font-size 2rem
+
+// use custom cursor on links
+a
+  cursor url(./assets/pointer.svg) 15 15, pointer !important
+
+// whole vertical screen when large
+@media (min-width: 40rem)
+  .page-large
+    min-height 100vh
+
+// divider
+hr
+  margin 1em
+  border-top-color rgba(0, 0, 0, 0.6)
+
+// images
+.image-container
+  width 100%
+  height 30vh
+  margin-bottom 2rem
+@media (min-width: 40rem) // alternate syles for thin and fat image
+  .thin-image-container
+    width 70%
+    height 70vh
+  .fat-image-container
+    width 100%
+    height 50vh
+    margin-bottom 2rem
+.column-photo// add space below column photo
+  margin-bottom 2rem !important
