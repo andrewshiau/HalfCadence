@@ -1,14 +1,19 @@
 import React, {PropTypes} from 'react';
-import './icon.styl';
+import radium from 'radium';
 
-const Icon = ({contents}) => (
-  <a className="icon">{contents}</a>
+const Icon = ({style, contents}) => (
+  <a style={style} className="icon">{contents}</a>
 );
 
 Icon.propTypes = {
   contents: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object
+  ]).isRequired,
+  style: PropTypes.oneOfType([
+    PropTypes.array,
+    PropTypes.object
   ]).isRequired
 };
-export default Icon;
+
+export default radium(Icon);
