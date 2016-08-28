@@ -2,7 +2,7 @@ import React from 'react';
 import './create.styl';
 
 const Create = () => (
-  <section className="container page-large hc-center" id="create">
+  <section className="container" id="create">
     <div className="row">
       <div className="column column-photo">
         <div className="image-container fat-image-container create-photo">
@@ -17,7 +17,7 @@ const Create = () => (
           <li><a target="_blank" href="https://github.com/andrewshiau/create" title="Create on Github">Github</a></li>
         </ul>
       </div>
-      <div className="column">
+      <div className="column column-75">
         <p>Create is a brainstorming application using virtual notecards.</p>
         <p>Its simple, reactive interface helps teams collaborate during the vital first hours of a project.	</p>
         <p>Create is built on the Meteor stack using Javascript / jQuery, Sass, Node.js and MongoDB.</p>

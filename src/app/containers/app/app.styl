@@ -1,16 +1,6 @@
 @import '../../theme/personalization'
 @import '../../theme/media'
 
-// didot
-@font-face
-  font-family Didot Bold
-  src url("./assets/Didot-Bold.ttf")
-
-//35% grid hack
-+widerthan(mobile)
-  .row .column.column-offset-35
-    margin-left 35%
-
 // flex-box stuff
 .hc-center
   display flex !important
@@ -28,20 +18,6 @@
 +narrowerthan(mobile)
   .visible-large
     display none
-
-// typography
-h6 // h6 for project titles
-  font-weight 700
-  letter-spacing 0.02em
-  font-size 1.6rem
-ul // style lists
- list-style none
-li // remove bottom margin from lists
- margin-bottom 0
-
-// customize selection
-::selection
-  background app-text-selection-color
 
 // cursor
 html

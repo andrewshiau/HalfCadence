@@ -6,7 +6,7 @@ const Header = () => (
   <nav className="navigation container visible-large">
     <div className="row">
       <div className="column column-10 column-offset-35 hc-center">
-        <Icon contents={"work"}/>
+        <Icon className="visible-large" contents={"work"}/>
       </div>
       <div className="column column-10 hc-center">
         <Icon
@@ -18,7 +18,7 @@ const Header = () => (
           />
       </div>
       <div className="column column-10 hc-center">
-        <Icon contents={"about"}/>
+        <Icon className="visible-large" contents={"about"}/>
       </div>
     </div>
   </nav>
