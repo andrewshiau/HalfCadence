@@ -1,12 +1,14 @@
-.about-photo {
-  transform: scaleX(1);
+@import '../../theme/media'
+
+.about-photo
   background-color: black;
   background-image: url("./assets/rightGrey.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: right;
-}
-@media (min-width: 40rem) { /* change layout on large screens */
+  background-position: 0% 17%;
+  +widerthan(mobile)
+    background-position right
++widerthan(mobile) { /* change layout on large screens */
   .thin-picture-text {
     text-align: right;
   }

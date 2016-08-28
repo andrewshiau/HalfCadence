@@ -1,0 +1,12 @@
+widerthan(var)
+  @media screen and (min-resolution: 1dppx) and (max-resolution: 1.9dppx) and (min-width: mobile),
+    screen and (min-resolution: 2dppx) and (max-resolution: 2.9dppx) and (min-width: 2 * mobile),
+    screen and (min-resolution: 3dppx) and (min-width: 3 * mobile)
+    {block}
+narrowerthan(var)
+  @media screen and (min-resolution: 1dppx) and (max-resolution: 1.9dppx) and (max-width: mobile),
+    screen and (min-resolution: 2dppx) and (max-resolution: 2.9dppx) and (max-width: 2 * mobile),
+    screen and (min-resolution: 3dppx) and (max-width: 3 * mobile)
+    {block}
+
+mobile = 50rem

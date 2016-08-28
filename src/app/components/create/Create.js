@@ -10,7 +10,7 @@ const Create = () => (
       </div>
     </div>
     <div className="row">
-      <div className="column column-33">
+      <div className="column column-25">
         <h6>Create</h6>
         <ul>
           <li><a target="_blank" href="https://vimeo.com/166755544" title="Create Trailer">Trailer</a></li>

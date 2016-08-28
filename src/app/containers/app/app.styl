@@ -1,4 +1,5 @@
-@import '../../theme/global'
+@import '../../theme/personalization'
+@import '../../theme/media'
 
 // didot
 @font-face
@@ -6,7 +7,7 @@
   src url("./assets/Didot-Bold.ttf")
 
 //35% grid hack
-@media (min-width: 40.0rem)
++widerthan(mobile)
   .row .column.column-offset-35
     margin-left 35%
 
@@ -21,10 +22,10 @@
   justify-content flex-end
 
 // visible large or small
-@media (min-width 40rem)
++widerthan(mobile)
   .visible-small
     display none
-@media (max-width 40rem)
++narrowerthan(mobile)
   .visible-large
     display none
 
@@ -55,7 +56,7 @@ body
   font-weight 400
 
 // larger fonts when large
-@media (min-width 40rem)
++widerthan(mobile)
   body
     font-size 2rem
   h6
@@ -66,7 +67,7 @@ a
   cursor url(./assets/pointer.svg) 15 15, pointer !important
 
 // whole vertical screen when large
-@media (min-width: 40rem)
++widerthan(mobile)
   .page-large
     min-height 100vh
 
@@ -78,15 +79,11 @@ hr
 // images
 .image-container
   width 100%
-  height 30vh
+  padding-bottom 45%
   margin-bottom 2rem
-@media (min-width: 40rem) // alternate syles for thin and fat image
++widerthan(mobile)
   .thin-image-container
     width 70%
-    height 70vh
-  .fat-image-container
-    width 100%
-    height 50vh
-    margin-bottom 2rem
+    padding-bottom 130%
 .column-photo// add space below column photo
   margin-bottom 2rem !important

@@ -1,3 +1,5 @@
+@import '../../theme/media'
+
 /* only put center button when thin */
 .create-photo {
   background-color: #efeff4;
@@ -7,7 +9,7 @@
   background-position: center;
 }
 /* put three buttons when fat */
-@media (min-width: 40rem) {
++widerthan(mobile) {
   .create-photo {
     background-image: url("./assets/newButton.png"), url("./assets/groupButton.png"), url("./assets/trashButton.png");
     background-position: left 2rem top 2rem, center, right 2rem bottom 2rem;
