@@ -1,13 +1,9 @@
 widerthan(var)
-  @media screen and (min-resolution: 1dppx) and (max-resolution: 1.9dppx) and (min-width: var),
-    screen and (min-resolution: 2dppx) and (max-resolution: 2.9dppx) and (min-width: 2 * var),
-    screen and (min-resolution: 3dppx) and (min-width: 3 * var)
+  @media screen and (min-width: var)
     {block}
 narrowerthan(var)
-  @media screen and (min-resolution: 1dppx) and (max-resolution: 1.9dppx) and (max-width: var),
-    screen and (min-resolution: 2dppx) and (max-resolution: 2.9dppx) and (max-width: 2 * var),
-    screen and (min-resolution: 3dppx) and (max-width: 3 * var)
+  @media screen and (max-width: var)
     {block}
 
-tallmobile = 30rem
-mobile = 50rem
+tallmobile = 400px
+mobile = 800px
