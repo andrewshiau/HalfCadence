@@ -26,7 +26,7 @@ module.exports = {
       },
       {
         test: /\.(css|styl|stylus)$/,
-        loader: ExtractTextPlugin.extract('style', 'css?minimize!stylus', 'postcss')
+        loader: ExtractTextPlugin.extract('style', 'css?minimize!postcss!stylus')
       },
       {
         test: /\.js$/,
