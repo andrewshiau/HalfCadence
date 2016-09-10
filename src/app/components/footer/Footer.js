@@ -5,7 +5,7 @@ const styles = {
     textAlign: `center`
   },
   footerText: { // give top margin
-    marginTop: `2.5rem`
+    margin: `2rem 0`
   }
 };
 
