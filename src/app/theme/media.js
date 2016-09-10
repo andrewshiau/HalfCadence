@@ -23,6 +23,3 @@ export function narrowerThan(width) {
     `screen and (-webkit-min-device-pixel-ratio: 2dppx) and (-webkit-max-device-pixel-ratio: 2.9dppx) and (max-width: ${2 * width}rem),` +
     `screen and (-webkit-min-device-pixel-ratio: 3dppx) and (max-width: ${3 * width}rem)`;
 }
-
-console.log(widerThan(devices.mobile));
-console.log(narrowerThan(devices.mobile));
