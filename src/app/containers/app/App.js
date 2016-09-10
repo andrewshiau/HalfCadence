@@ -21,7 +21,7 @@ class App extends Component {
         <div className="app">
           <Header/>
           <Home/>
-          <hr/>
+          <hr className="visible-large"/>
           <Create/>
           <hr/>
           <About/>
