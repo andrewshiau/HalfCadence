@@ -13,7 +13,6 @@ import Footer from '../../components/footer/Footer';
 
 // radium styles
 import radium, {StyleRoot} from 'radium';
-import {visibleLarge} from '../../theme/styles';
 
 class App extends Component {
   render() {
@@ -22,7 +21,6 @@ class App extends Component {
         <div className="app">
           <Header/>
           <Home/>
-          <hr style={visibleLarge}/>
           <Create/>
           <hr/>
           <About/>
