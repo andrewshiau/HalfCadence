@@ -1,0 +1,33 @@
+#!/bin/bash
+
+# save the current Path
+savedPath=`pwd`
+
+red='\033[1;31m'
+nocolor='\033[0m'
+purple='\033[1;35m'
+
+cd ../
+echo "${purple}Pulling from git...${nocolor}"
+git pull
+if [ $? -ne 0 ]; then
+  echo "${red}Failed. Try to pull manually."
+  exit
+fi
+
+echo "${purple}Stopping nginx..."
+service nginx stop
+if [ $? -ne 0 ]; then
+  echo "${red}Failed. Please manually restart nginx."
+  exit
+fi
+
+echo "${purple}Starting nginx..."
+service nginx start
+if [ $? -ne 0 ]; then
+  echo "${red}Failed. Please manually restart nginx."
+  exit
+fi
+
+cd $savedPath
+echo "${purple}Finished deploying. Have a nice day! :0"
