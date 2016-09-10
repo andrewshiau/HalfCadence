@@ -1,9 +1,17 @@
 import React from 'react';
-import './footer.styl';
+
+const styles = {
+  footer: { // center text
+    textAlign: `center`
+  },
+  footerText: { // give top margin
+    marginTop: `2.5rem`
+  }
+};
 
 const Footer = () => (
-  <footer className="footer">
-    <p>half cadence by&nbsp;
+  <footer style={styles.footer}>
+    <p style={styles.footerText}>half cadence by&nbsp;
       <a
         target="_blank"
         href="https://instagram.com/half_cadence"

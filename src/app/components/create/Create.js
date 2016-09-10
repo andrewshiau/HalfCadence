@@ -1,11 +1,31 @@
 import React from 'react';
-import './create.styl';
+import radium from 'radium';
+import {widerThan, devices} from '../../theme/media';
+
+import newButton from './assets/newButton.png';
+import groupButton from './assets/groupButton.png';
+import trashButton from './assets/trashButton.png';
+
+const styles = {
+  createPhoto: {
+    backgroundColor: '#efeff4',
+    backgroundImage: `url(${groupButton})`,
+    backgroundSize: `50%`,
+    backgroundRepeat: `no-repeat`,
+    backgroundPosition: `center`,
+    [widerThan(devices.mobile)]: {
+      backgroundSize: `auto`,
+      backgroundImage: `url(${newButton}), url(${groupButton}), url(${trashButton})`,
+      backgroundPosition: `left 2rem top 2rem, center, right 2rem bottom 2rem`
+    }
+  }
+};
 
 const Create = () => (
   <section className="container" id="create">
     <div className="row">
       <div className="column column-photo">
-        <div className="image-container fat-image-container create-photo">
+        <div className="image-container fat-image-container" style={styles.createPhoto}>
         </div>
       </div>
     </div>
@@ -26,4 +46,4 @@ const Create = () => (
   </section>
 );
 
-export default Create;
+export default radium(Create);
