@@ -1,5 +1,6 @@
 // media queries
-// converts number arguments to rems
+// somehow not autoprefixed
+// so prefixed to not break mobile
 
 export const devices = {
   tallmobile: 30,

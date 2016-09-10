@@ -41,7 +41,7 @@ const About = () => (
       <div className="column" style={styles.flakyText}>
         <h6 style={slantTitle}>about</h6>
         <p>Andrew Shiau is a web designer, game developer, and musician from Houston, Texas.</p>
-        <p>At the moment, he is studying Computer Science and Cello Performance at Johns Hopkins University and at the Peabody Institute.</p>
+        <p>At the moment, he is studying Computer Science and Cello Performance at Johns Hopkins University and the Peabody Institute.</p>
         <ul>
           <li><a
             target="_blank"
