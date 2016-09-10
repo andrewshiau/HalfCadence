@@ -20,13 +20,12 @@ class App extends Component {
       <StyleRoot>
         <div className="app">
           <Header/>
-          <hr className="visible-small"></hr>
           <Home/>
-          <hr></hr>
+          <hr/>
           <Create/>
-          <hr></hr>
+          <hr/>
           <About/>
-          <hr></hr>
+          <hr/>
           <Footer/>
         </div>
       </StyleRoot>

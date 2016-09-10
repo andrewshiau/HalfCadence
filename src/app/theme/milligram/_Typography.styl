@@ -5,42 +5,34 @@
   src url("../assets/Didot-Bold.ttf")
 
 p
-	margin-top: 0
+  margin-top: 0
+  margin-bottom 2rem
+  letter-spacing 0.04em
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6
-	font-weight: 300
-	margin-bottom: 2.0rem
-	margin-top: 0
+h1, h6
+  margin-bottom: 1.0rem
+  margin-top: 0
+  +widerthan(mobile)
+    margin-bottom: 2.0rem
 
 h1
-	font-size: 4.0rem
-	letter-spacing: .07em
-	line-height: 1.2
-	font-family Didot Bold
+  font-size: 4.0rem
+  letter-spacing: .07em
+  line-height: 1.2
+  font-family Didot Bold
+  +widerthan(mobile)
+    font-size: 5.0rem
+
 h1::selection
-    background rgba(0, 0, 0, 0.8)
-    color #fafafa
+  background rgba(0, 0, 0, 0.8)
+  color #fafafa
 
 h6
   font-weight 400
-	letter-spacing 0.08em
-
-	font-size: 1.6rem
-	line-height: 1.4
-
-// Larger than mobile screen
-+widerthan(mobile)
-
-	h1
-		font-size: 5.0rem
-
-	h6
-		font-size: 1.5rem
+  font-size 1.6rem
+  line-height 1.4
+  +widerthan(mobile)
+    font-size 2rem
 
 // customize selection
 ::selection

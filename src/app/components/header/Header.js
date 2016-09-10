@@ -1,5 +1,7 @@
 import React from 'react';
+import radium from 'radium';
 import Icon from '../icon/Icon';
+import {widerThan, devices} from '../../theme/media';
 
 const styles = {
   icon: {
@@ -16,18 +18,23 @@ const styles = {
   },
   iconTypography: {
     fontStyle: 'italic',
-    letterSpacing: '.1em'
+    letterSpacing: '.1em',
+    color: 'black',
+    fontWeight: '400'
   },
   navigation: {
-    position: 'fixed',
-    paddingTop: '5vh',
+    position: 'relative',
+    padding: '5vh 0',
     zIndex: '9001',
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     left: '0',
-    right: '0'
+    right: '0',
+    [widerThan(devices.mobile)]: {
+      position: 'fixed'
+    }
   }
 };
 
@@ -52,4 +59,4 @@ const Header = () => (
   </nav>
 );
 
-export default Header;
+export default radium(Header);

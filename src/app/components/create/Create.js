@@ -1,6 +1,7 @@
 import React from 'react';
 import radium from 'radium';
 import {widerThan, devices} from '../../theme/media';
+import {slantTitle} from '../../theme/styles';
 
 import newButton from './assets/newButton.png';
 import groupButton from './assets/groupButton.png';
@@ -13,6 +14,7 @@ const styles = {
     backgroundSize: `50%`,
     backgroundRepeat: `no-repeat`,
     backgroundPosition: `center`,
+    marginBottom: '4rem',
     [widerThan(devices.mobile)]: {
       backgroundSize: `auto`,
       backgroundImage: `url(${newButton}), url(${groupButton}), url(${trashButton})`,
@@ -31,10 +33,24 @@ const Create = () => (
     </div>
     <div className="row">
       <div className="column column-25">
-        <h6>Create</h6>
+        <h6 style={slantTitle}>Create</h6>
         <ul>
-          <li><a target="_blank" href="https://vimeo.com/166755544" title="Create Trailer">Trailer</a></li>
-          <li><a target="_blank" href="https://github.com/andrewshiau/create" title="Create on Github">Github</a></li>
+          <li><a
+            target="_blank"
+            href="https://vimeo.com/166755544"
+            title="Create Trailer"
+            style={slantTitle}
+            >
+            Trailer
+          </a></li>
+          <li><a
+            target="_blank"
+            href="https://github.com/andrewshiau/create"
+            title="Create on Github"
+            style={slantTitle}
+            >
+            Github
+          </a></li>
         </ul>
       </div>
       <div className="column column-75">

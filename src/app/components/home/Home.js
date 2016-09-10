@@ -5,13 +5,12 @@ const styles = {
     fontSize: '10vw',
     textAlign: 'center',
     whiteSpace: 'nowrap',
-    marginTop: '2rem', // top margin to match bottom margin given by milligram
     pointerEvents: `none`
   }
 };
 
 const Home = () => (
-  <section className="page-large hc-center" id="title">
+  <section className="page-large hc-center visible-large" id="title">
     <h1 className="title" style={styles.title}>half cadence</h1>
   </section>
 );
