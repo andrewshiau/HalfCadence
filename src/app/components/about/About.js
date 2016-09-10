@@ -39,10 +39,10 @@ class About extends Component {
 
   componentDidMount() {
     const config = {
-      origin: 'bottom',
+      origin: 'right',
       duration: 1000,
       delay: 150,
-      distance: '30px',
+      distance: '15px',
       scale: 1,
       easing: 'cubic-bezier(0.445, 0.050, 0.550, 0.950)'
     };
