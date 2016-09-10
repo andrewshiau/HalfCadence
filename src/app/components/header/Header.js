@@ -24,7 +24,7 @@ const styles = {
   },
   navigation: {
     position: 'relative',
-    padding: '5vh 0',
+    padding: '2rem 0',
     zIndex: '9001',
     display: 'flex',
     flexDirection: 'row',
