@@ -1,13 +1,55 @@
 #!/bin/bash
 
+# fun colors
+red='\033[0;31m'
+nocolor='\033[0m'
+purple='\033[0;35m'
+
+# check option
+if [ -n $1 ] && [ "$1" = "force" ] || [ "$1" = "f" ]; then
+  force=true
+  echo "${purple}┌───────────────────────────────────────────────────────────────┐"
+  echo "${purple}│ Pull and Deploy. Force redeploy even if up to date with repo. │"
+  echo "${purple}└───────────────────────────────────────────────────────────────┘"
+  echo "${nocolor}"
+else
+  force=false
+  echo "${purple}┌──────────────────┐"
+  echo "${purple}│ Pull and Deploy. │"
+  echo "${purple}└──────────────────┘"
+  echo "${nocolor}"
+fi
+
 # save the current Path
 savedPath=`pwd`
 
-red='\033[1;31m'
-nocolor='\033[0m'
-purple='\033[1;35m'
-
 cd ../
+
+# check if we are up to date with origin/master
+echo "${purple}Checking git to see if we are up to date...${nocolor}"
+currentBuildHash=$(git rev-parse HEAD)
+newBuildHash=$(git ls-remote $(git rev-parse --abbrev-ref @{u} | sed 's/\// /g') | cut -f1)
+
+# make sure the md5 hashes are valid
+if [ -z $currentBuildHash ] || [ `expr "$currentBuildHash" : '[0-9a-fA-F]\{32\}\|[0-9a-fA-F]\{40\}'` -ne ${#currentBuildHash} ]; then
+  echo "${red}Found hash of ${currentBuildHash} for the local git hash which is not a valid md5 hash, stopping execution."
+  exit
+fi
+if [ -z $newBuildHash ] || [ `expr "$newBuildHash" : '[0-9a-fA-F]\{32\}\|[0-9a-fA-F]\{40\}'` -ne ${#newBuildHash} ]; then
+  echo "${red}Found hash of ${newBuildHash} for the remote git hash which is not a valid md5 hash, stopping execution."
+  exit
+fi
+
+if [ $currentBuildHash = $newBuildHash ]; then
+  if [ $force = true ]; then
+    echo "Already up to date, continuing anyways."
+  else
+    echo "${purple}Already up to date, stopping execution.${nocolor}"
+    exit
+  fi
+fi
+
+# pull from git
 echo "${purple}Pulling from git...${nocolor}"
 git pull
 if [ $? -ne 0 ]; then
@@ -15,6 +57,20 @@ if [ $? -ne 0 ]; then
   exit
 fi
 
+# install packages from npm
+echo "${purple}Installing packages...${nocolor}"
+npm install
+npm update
+
+# rebuild /dist
+echo "${purple}Rebuilding /dist...${nocolor}"
+npm run build
+if [ $? -ne 0 ]; then
+  echo "${red}Failed. Try to pull manually."
+  exit
+fi
+
+# stop nginx
 echo "${purple}Stopping nginx..."
 service nginx stop
 if [ $? -ne 0 ]; then
@@ -22,6 +78,7 @@ if [ $? -ne 0 ]; then
   exit
 fi
 
+# start nginx
 echo "${purple}Starting nginx..."
 service nginx start
 if [ $? -ne 0 ]; then
