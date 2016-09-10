@@ -34,7 +34,7 @@ const styles = {
 const Header = () => (
   <nav style={styles.navigation}>
     <Icon
-      style={[styles.marginRight, styles.marginLeft, styles.iconTypography]}
+      style={[styles.marginRight, styles.iconTypography]}
       contents={"work"}
       />
     <Icon
