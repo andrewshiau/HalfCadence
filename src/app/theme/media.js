@@ -20,5 +20,3 @@ export function narrowerThan(width) {
     `screen and (min-resolution: 2dppx) and (max-resolution: 2.9dppx) and (max-width: ${2 * width}rem),` +
     `screen and (min-resolution: 3dppx) and (max-width: ${3 * width}rem)`;
 }
-
-console.log(narrowerThan(devices.mobile))
