@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {Component} from 'react';
 import radium from 'radium';
 import {widerThan, devices} from '../../theme/media';
 import {slantTitle} from '../../theme/styles';
+import scrollReveal from '../scrollReveal/scrollReveal';
 
 import newButton from './assets/newButton.png';
 import groupButton from './assets/groupButton.png';
@@ -23,43 +24,72 @@ const styles = {
   }
 };
 
-const Create = () => (
-  <section className="container" id="create">
-    <div className="row">
-      <div className="column column-photo">
-        <div className="image-container fat-image-container" style={styles.createPhoto}>
+class Create extends Component {
+  bindRef(c) {
+    this.title = c;
+  }
+
+  componentDidMount() {
+    const config = {
+      origin: 'bottom',
+      duration: 1000,
+      delay: 150,
+      distance: '30px',
+      scale: 1,
+      easing: 'cubic-bezier(0.445, 0.050, 0.550, 0.950)'
+    };
+    scrollReveal.reveal(this.title, config);
+  }
+
+  render() {
+    const that = this;
+    return (
+      <section
+        className="container"
+        id="create"
+        ref={
+          function (c) {
+            that.bindRef(c);
+          }
+        }
+        >
+        <div className="row">
+          <div className="column column-photo">
+            <div className="image-container fat-image-container" style={styles.createPhoto}>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div className="row">
-      <div className="column column-25">
-        <h6 style={slantTitle}>Create</h6>
-        <ul>
-          <li><a
-            target="_blank"
-            href="https://vimeo.com/166755544"
-            title="Create Trailer"
-            style={slantTitle}
-            >
-            Trailer
-          </a></li>
-          <li><a
-            target="_blank"
-            href="https://github.com/andrewshiau/create"
-            title="Create on Github"
-            style={slantTitle}
-            >
-            Github
-          </a></li>
-        </ul>
-      </div>
-      <div className="column column-75">
-        <p>Create is a brainstorming application using virtual notecards.</p>
-        <p>Its simple, reactive interface helps teams collaborate during the vital first hours of a project.	</p>
-        <p>Create is built on the Meteor stack using Javascript / jQuery, Sass, Node.js and MongoDB.</p>
-      </div>
-    </div>
-  </section>
-);
+        <div className="row">
+          <div className="column column-25">
+            <h6 style={slantTitle}>Create</h6>
+            <ul>
+              <li><a
+                target="_blank"
+                href="https://vimeo.com/166755544"
+                title="Create Trailer"
+                style={slantTitle}
+                >
+                Trailer
+              </a></li>
+              <li><a
+                target="_blank"
+                href="https://github.com/andrewshiau/create"
+                title="Create on Github"
+                style={slantTitle}
+                >
+                Github
+              </a></li>
+            </ul>
+          </div>
+          <div className="column column-75">
+            <p>Create is a brainstorming application using virtual notecards.</p>
+            <p>Its simple, reactive interface helps teams collaborate during the vital first hours of a project.	</p>
+            <p>Create is built on the Meteor stack using Javascript / jQuery, Sass, Node.js and MongoDB.</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+}
 
 export default radium(Create);

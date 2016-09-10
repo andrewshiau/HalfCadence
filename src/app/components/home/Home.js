@@ -29,6 +29,7 @@ class Home extends Component {
     };
     scrollReveal.reveal(this.title, config);
   }
+
   render() {
     const that = this;
     return (
@@ -46,4 +47,5 @@ class Home extends Component {
     );
   }
 }
+
 export default radium(Home);
