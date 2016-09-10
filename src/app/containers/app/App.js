@@ -11,8 +11,9 @@ import Create from '../../components/create/Create';
 import About from '../../components/about/About';
 import Footer from '../../components/footer/Footer';
 
-// https://github.com/FormidableLabs/radium/tree/master/docs/api#styleroot-component
-import {StyleRoot} from 'radium';
+// radium styles
+import radium, {StyleRoot} from 'radium';
+import {visibleLarge} from '../../theme/styles';
 
 class App extends Component {
   render() {
@@ -21,7 +22,7 @@ class App extends Component {
         <div className="app">
           <Header/>
           <Home/>
-          <hr className="visible-large"/>
+          <hr style={visibleLarge}/>
           <Create/>
           <hr/>
           <About/>
@@ -34,4 +35,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default radium(App);
