@@ -3,7 +3,7 @@ import radium from 'radium';
 import Icon from '../icon/Icon';
 import {widerThan, devices} from '../../theme/media';
 
-import scrollReveal from '../scrollReveal/scrollReveal';
+import reveal, {configurations} from '../scrollReveal/reveal';
 
 const styles = {
   icon: {
@@ -42,33 +42,9 @@ const styles = {
 };
 
 class Header extends Component {
-  bindRef(c) {
-    this.navigation = c;
-  }
-
-  componentDidMount() {
-    const config = {
-      origin: 'bottom',
-      duration: 1000,
-      delay: 1000 + 150,
-      distance: '0px',
-      scale: 1,
-      easing: 'cubic-bezier(0.445, 0.050, 0.550, 0.950)'
-    };
-    scrollReveal.reveal(this.navigation, config);
-  }
-
   render() {
-    const that = this;
     return (
-      <nav
-        style={styles.navigation}
-        ref={
-          function (c) {
-            that.bindRef(c);
-          }
-        }
-        >
+      <nav style={styles.navigation} >
         <Icon
           style={[styles.marginRight, styles.iconTypography]}
           contents={"work"}
@@ -90,4 +66,4 @@ class Header extends Component {
   }
 }
 
-export default radium(Header);
+export default reveal(radium(Header), configurations.delayed);

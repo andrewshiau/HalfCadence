@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import radium from 'radium';
 import {widerThan, devices} from '../../theme/media';
 import {slantTitle} from '../../theme/styles';
-import scrollReveal from '../scrollReveal/scrollReveal';
+import reveal, {configurations} from '../scrollReveal/reveal';
 
 import image from './assets/rightGrey.jpg';
 
@@ -33,34 +33,9 @@ const styles = {
 };
 
 class About extends Component {
-  bindRef(c) {
-    this.c = c;
-  }
-
-  componentDidMount() {
-    const config = {
-      origin: 'right',
-      duration: 1000,
-      delay: 150,
-      distance: '15px',
-      scale: 1,
-      easing: 'cubic-bezier(0.445, 0.050, 0.550, 0.950)'
-    };
-    scrollReveal.reveal(this.c, config);
-  }
-
   render() {
-    const that = this;
     return (
-      <section
-        className="container hc-bottom"
-        id="about"
-        ref={
-          function (c) {
-            that.bindRef(c);
-          }
-        }
-        >
+      <section className="container hc-bottom" id="about">
         <div className="row" style={styles.reverseWhenLarge}>
           <div className="column">
             <div className="image-container thin-image-container" style={styles.aboutPhoto}>
@@ -110,4 +85,4 @@ class About extends Component {
   }
 }
 
-export default radium(About);
+export default reveal(radium(About), configurations.slowLeft);

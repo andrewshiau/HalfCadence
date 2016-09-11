@@ -13,6 +13,7 @@ render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route path="/" component={App}/>
+      <Route path="/test" component={App}/>
     </Router>
   </Provider>,
   document.getElementById('cad')

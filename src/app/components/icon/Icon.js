@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import radium from 'radium';
 
 const Icon = ({style, contents}) => (
-  <a style={style} className="icon">{contents}</a>
+  <a href="#create" style={style} className="icon">{contents}</a>
 );
 
 Icon.propTypes = {
