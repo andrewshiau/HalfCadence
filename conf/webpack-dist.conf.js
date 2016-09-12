@@ -58,12 +58,13 @@ module.exports = {
       name: 'vendor',
       path: path.join(__dirname, '../node_modules')
     }]),
-    new ExtractTextPlugin('/index-[contenthash].css')
+    new ExtractTextPlugin('index-[contenthash].css')
   ],
   postcss: () => [autoprefixer],
   output: {
     path: path.join(process.cwd(), conf.paths.dist),
-    filename: '[name]-[hash].js'
+    filename: '[name]-[hash].js',
+    publicPath: '/'
   },
   entry: {
     app: `./${conf.path.src('index')}`
