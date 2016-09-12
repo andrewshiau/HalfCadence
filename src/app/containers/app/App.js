@@ -1,5 +1,4 @@
-import React, {Component} from 'react';
-import ReactDOM from 'react-dom';
+import React, {Component, PropTypes} from 'react';
 
 // style sheets
 import '../../theme/milligram/milligram.styl';
@@ -21,13 +20,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log('entire page stuff');
-    const home = ReactDOM.findDOMNode(this);
-    console.log(home);
-    console.log(`${home.scrollTop} / ${home.scrollHeight}`);
-    console.log('home stuff');
-    console.log(ReactDOM.findDOMNode(this.title));
-    console.log(`${ReactDOM.findDOMNode(this.title).scrollTop} / ${ReactDOM.findDOMNode(this.title).scrollHeight}`);
+    console.log(JSON.stringify(this.props.route.position, null, 2));
   }
 
   render() {
@@ -54,5 +47,9 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  route: PropTypes.object
+};
 
 export default radium(App);

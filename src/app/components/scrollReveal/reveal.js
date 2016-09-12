@@ -1,3 +1,5 @@
+// higher order component to scroll reveal a react component
+
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 

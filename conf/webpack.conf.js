@@ -51,7 +51,8 @@ module.exports = {
   devtool: 'cheap-module-eval-source-map',
   output: {
     path: path.join(process.cwd(), conf.paths.tmp),
-    filename: 'index.js'
+    filename: 'index.js',
+    publicPath: '/'
   },
   entry: [
     'webpack/hot/dev-server',
