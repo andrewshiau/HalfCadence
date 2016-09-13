@@ -7,9 +7,7 @@ import radium from 'radium';
 const RadiumLink = radium(RRLink);
 
 const Link = ({style, contents, linkTo = "/"}) => (
-  <RadiumLink style={style} className="icon" to={linkTo}>
-    {contents}
-  </RadiumLink>
+  <RadiumLink style={style} className="icon" to={linkTo}> {contents} </RadiumLink>
 );
 
 Link.propTypes = {

@@ -14,29 +14,42 @@ import Footer from '../../components/footer/Footer';
 // radium styles
 import radium, {StyleRoot} from 'radium';
 
-class App extends Component {
-  bindRef(c) {
-    this.title = c;
-  }
+// scroll
+import Scroll from 'react-scroll';
 
+const Link = Scroll.Link;
+const Events = Scroll.Events;
+const scroller = Scroll.scroller;
+const makeElement = Scroll.Helpers.Element;
+
+// make create into a scroll Element
+const ScrollCreate = makeElement(Create);
+
+class App extends Component {
   componentDidMount() {
-    // console.log(JSON.stringify(this.props.routes[this.props.routes.length - 1], null, 2));
+    Events.scrollEvent.register('begin', function () {
+      console.log("begin", arguments);
+    });
+
+    Events.scrollEvent.register('end', function () {
+      console.log("end", arguments);
+    });
+/*
+    scroller.scrollTo('create', {
+      duration: 500,
+      offset: -50, // hack to give me 2 rem
+      smooth: true
+    });*/
   }
 
   render() {
-    const that = this;
     return (
       <StyleRoot>
         <div className="app">
+          <li><Link activeClass="active" className="create" to="create" smooth offset={-20} duration={500} >Test 1</Link></li>
           <Header/>
-          <Home
-            ref={
-              function (c) {
-                that.bindRef(c);
-              }
-            }
-            />
-          <Create/>
+          <Home name="home"/>
+          <ScrollCreate name="create" className="element"/>
           <hr/>
           <About/>
           <hr/>

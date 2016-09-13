@@ -11,6 +11,7 @@ const defaultConfiguration = {
   scale: 1,
   duration: 2000,
   delay: 150,
+  reset: true, // troll
   easing: 'cubic-bezier(0.445, 0.050, 0.550, 0.950)'
 };
 

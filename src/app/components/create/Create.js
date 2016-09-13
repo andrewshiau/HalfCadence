@@ -24,47 +24,78 @@ const styles = {
   }
 };
 
-class Create extends Component {
+const NoRadiumPhoto = () => (
+  <div className="column column-photo">
+    <div className="image-container fat-image-container" style={styles.createPhoto}>
+    </div>
+  </div>
+);
+const Photo = radium(NoRadiumPhoto);
+
+const TrailerLink = () => (
+  <a
+    target="_blank"
+    href="https://vimeo.com/166755544"
+    title="Create Trailer"
+    style={slantTitle}
+    >
+    Trailer
+  </a>
+);
+
+const GithubLink = () => (
+  <a
+    target="_blank"
+    href="https://github.com/andrewshiau/create"
+    title="Create on Github"
+    style={slantTitle}
+    >
+    Github
+  </a>
+);
+
+const Description = () => (
+  <span>
+    <p>Create is a brainstorming application using virtual notecards.</p>
+    <p>Its simple, reactive interface helps teams collaborate during the vital first hours of a project.</p>
+    <p>Create is built on the Meteor stack using Javascript / jQuery, Sass, Node.js and MongoDB.</p>
+  </span>
+);
+
+// make a component that we apply scroll reveal to
+class ComponentToReveal extends Component {
   render() {
     return (
-      <section className="container" id="create">
-        <div className="row">
-          <div className="column column-photo">
-            <div className="image-container fat-image-container" style={styles.createPhoto}>
-            </div>
-          </div>
-        </div>
+      <section className="container">
+        <div className="row"> <Photo/> </div>
         <div className="row">
           <div className="column column-25">
             <h6 style={slantTitle}>Create</h6>
             <ul>
-              <li><a
-                target="_blank"
-                href="https://vimeo.com/166755544"
-                title="Create Trailer"
-                style={slantTitle}
-                >
-                Trailer
-              </a></li>
-              <li><a
-                target="_blank"
-                href="https://github.com/andrewshiau/create"
-                title="Create on Github"
-                style={slantTitle}
-                >
-                Github
-              </a></li>
+              <li><TrailerLink/></li>
+              <li><GithubLink/></li>
             </ul>
           </div>
           <div className="column column-75">
-            <p>Create is a brainstorming application using virtual notecards.</p>
-            <p>Its simple, reactive interface helps teams collaborate during the vital first hours of a project.	</p>
-            <p>Create is built on the Meteor stack using Javascript / jQuery, Sass, Node.js and MongoDB.</p>
+            <Description/>
           </div>
         </div>
       </section>
     );
   }
 }
+// apply scroll reveal
+const RevealedComponentToReveal = reveal(ComponentToReveal, configurations.fastUp);
 
-export default reveal(radium(Create), configurations.fastUp);
+// wrap it in a div so that we can scroll to its final position
+class Create extends Component {
+  render() {
+    return (
+      <div id="create">
+        <RevealedComponentToReveal/>
+      </div>
+    );
+  }
+}
+
+export default radium(Create);
