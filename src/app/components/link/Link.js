@@ -1,17 +1,18 @@
 import React, {PropTypes} from 'react';
-import {Link} from 'react-router';
-
+import {Link as RRLink} from 'react-router';
 import radium from 'radium';
 
-const RadiumLink = radium(Link);
-const Icon = ({style, contents, linkTo = "/"}) => (
-  /* <a href="#create" style={style} className="icon">{contents}</a> */
+// https://github.com/FormidableLabs/radium/tree/master/docs/faq
+// wrap link to apply radium styles to it
+const RadiumLink = radium(RRLink);
+
+const Link = ({style, contents, linkTo = "/"}) => (
   <RadiumLink style={style} className="icon" to={linkTo}>
     {contents}
   </RadiumLink>
 );
 
-Icon.propTypes = {
+Link.propTypes = {
   contents: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.object
@@ -23,4 +24,4 @@ Icon.propTypes = {
   linkTo: PropTypes.string
 };
 
-export default radium(Icon);
+export default radium(Link);

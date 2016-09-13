@@ -12,9 +12,7 @@ const store = configureStore();
 function trolld(nextState, replace, callback) {
   console.log(`on enter\n` +
     `--------\n` +
-    `next: ${JSON.stringify(nextState.routes[nextState.routes.length - 1], null, 2)}` +
-    `replace: ${replace}` +
-    `callback: ${callback}`
+    `next: ${JSON.stringify(nextState.routes[nextState.routes.length - 1], null, 2)}\n`
   );
   callback();
 }
@@ -22,11 +20,10 @@ function trolld(nextState, replace, callback) {
 function troll(prevState, nextState, replace, callback) {
   console.log(`on change\n` +
     `--------\n` +
-    `previous: ${JSON.stringify(prevState.routes[prevState.routes.length - 1], null, 2)}` +
-    `next: ${JSON.stringify(nextState.routes[nextState.routes.length - 1], null, 2)}` +
-    `replace: ${replace}` +
-    `callback: ${callback}`
+    `previous: ${JSON.stringify(prevState.routes[prevState.routes.length - 1], null, 2)}\n` +
+    `next: ${JSON.stringify(nextState.routes[nextState.routes.length - 1], null, 2)}\n`
   );
+  callback();
 }
 
 render(
