@@ -20,7 +20,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log(JSON.stringify(this.props.route.position, null, 2));
+    console.log(JSON.stringify(this.props.routes[this.props.routes.length - 1], null, 2));
   }
 
   render() {
@@ -49,7 +49,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  route: PropTypes.object
+  routes: PropTypes.array
 };
 
 export default radium(App);
