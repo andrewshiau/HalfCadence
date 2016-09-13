@@ -1,8 +1,14 @@
 import React, {PropTypes} from 'react';
+import {Link} from 'react-router';
+
 import radium from 'radium';
 
-const Icon = ({style, contents}) => (
-  <a href="#create" style={style} className="icon">{contents}</a>
+const RadiumLink = radium(Link);
+const Icon = ({style, contents, linkTo = "/"}) => (
+  /* <a href="#create" style={style} className="icon">{contents}</a> */
+  <RadiumLink style={style} className="icon" to={linkTo}>
+    {contents}
+  </RadiumLink>
 );
 
 Icon.propTypes = {
@@ -13,7 +19,8 @@ Icon.propTypes = {
   style: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.object
-  ]).isRequired
+  ]).isRequired,
+  linkTo: PropTypes.string
 };
 
 export default radium(Icon);

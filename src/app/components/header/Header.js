@@ -48,6 +48,7 @@ class Header extends Component {
         <Icon
           style={[styles.marginRight, styles.iconTypography]}
           contents={"work"}
+          linkTo={"/work"}
           />
         <Icon
           style={styles.icon}
@@ -56,10 +57,12 @@ class Header extends Component {
               <path fillRule="evenodd" d="M0,0 L8,0 L8,8 L0,8 L0,0 Z M1,1 L7,1 L7,7 L1,7 L1,1 Z"/>
               <path d="M2,2 L6,2 L6,6 L2,6 L2,2 Z" fill="currentColor"/>
             </svg>}
+          linkTo={"/"}
           />
         <Icon
           style={[styles.marginLeft, styles.iconTypography]}
           contents={"about"}
+          linkTo={"/about"}
           />
       </nav>
     );
