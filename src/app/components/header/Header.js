@@ -4,6 +4,7 @@ import Link from '../link/Link';
 import {widerThan, devices} from '../../theme/media';
 
 import reveal, {configurations} from '../scrollReveal/reveal';
+import anchor from '../scrollReveal/anchor';
 
 const styles = {
   icon: {
@@ -77,4 +78,10 @@ class Header extends Component {
   }
 }
 
-export default reveal(radium(Header), configurations.delayed);
+// apply scroll reveal,
+// then anchor so that scroll events know where to scroll to
+export default anchor(
+  reveal(
+    radium(Header),
+    configurations.delayed),
+  "header");

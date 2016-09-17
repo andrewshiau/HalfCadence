@@ -14,7 +14,7 @@ render(
   <Provider store={store}>
     <Router history={browserHistory}>
       <Route component={App}>
-        <Route path="/" position={"home"}/>
+        <Route path="/" position={"cad"}/>
         <Route path="work" position={"work"}/>
         <Route path="about" position={"about"}/>
       </Route>
