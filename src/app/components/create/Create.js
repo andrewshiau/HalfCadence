@@ -91,4 +91,4 @@ export default anchor(
   reveal(
     Create,
     configurations.fastUp),
-  "create");
+  "work");
