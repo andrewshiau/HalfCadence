@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import radium from 'radium';
 
 import reveal, {configurations} from '../scrollReveal/reveal';
+import anchor from '../scrollReveal/anchor';
 
 const styles = {
   title: {
@@ -15,11 +16,17 @@ const styles = {
 class Home extends Component {
   render() {
     return (
-      <section className="page-large hc-center visible-large" id="home">
+      <section className="page-large hc-center visible-large">
         <h1 className="title" style={styles.title}>half cadence</h1>
       </section>
     );
   }
 }
 
-export default reveal(radium(Home), configurations.slowUp);
+// apply scroll reveal,
+// then anchor so that scroll events know where to scroll to
+export default anchor(
+  reveal(
+    radium(Home),
+    configurations.slowUp),
+  "home");
