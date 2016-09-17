@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import radium from 'radium';
 import {widerThan, devices} from '../../theme/media';
-import {slantTitle} from '../../theme/styles';
+import {slantTitle, paddedComponent} from '../../theme/styles';
 import reveal, {configurations} from '../scrollReveal/reveal';
 import anchor from '../scrollReveal/anchor';
 import newButton from './assets/newButton.png';
@@ -9,10 +9,6 @@ import groupButton from './assets/groupButton.png';
 import trashButton from './assets/trashButton.png';
 
 const styles = {
-  component: {
-    paddingTop: '2rem',
-    paddingBottom: '2rem'
-  },
   createPhoto: {
     backgroundColor: '#efeff4',
     backgroundImage: `url(${groupButton})`,
@@ -70,7 +66,7 @@ const Description = () => (
 class Create extends Component {
   render() {
     return (
-      <section className="container" style={styles.component}>
+      <section className="container" style={paddedComponent}>
         <div className="row"> <Photo/> </div>
         <div className="row">
           <div className="column column-25">
