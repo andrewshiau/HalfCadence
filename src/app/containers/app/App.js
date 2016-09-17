@@ -7,7 +7,7 @@ import './app.styl';
 // components
 import Header from '../../components/header/Header';
 import Home from '../../components/home/Home';
-import Create from '../../components/create/Create';
+import NeedScrollCreate from '../../components/create/Create';
 import About from '../../components/about/About';
 import Footer from '../../components/footer/Footer';
 
@@ -23,7 +23,7 @@ const scroller = Scroll.scroller;
 const makeElement = Scroll.Helpers.Element;
 
 // make create into a scroll Element
-const ScrollCreate = makeElement(Create);
+const Create = makeElement(NeedScrollCreate);
 
 class App extends Component {
   componentDidMount() {
@@ -34,22 +34,24 @@ class App extends Component {
     Events.scrollEvent.register('end', function () {
       console.log("end", arguments);
     });
-/*
-    scroller.scrollTo('create', {
-      duration: 500,
-      offset: -50, // hack to give me 2 rem
+
+    const positionAtPath = this.props.routes[this.props.routes.length - 1].position;
+    console.log(positionAtPath);
+
+    scroller.scrollTo(positionAtPath, {
+      duration: 0,
       smooth: true
-    });*/
+    });
   }
 
   render() {
     return (
       <StyleRoot>
         <div className="app">
-          <li><Link activeClass="active" className="create" to="create" smooth offset={-20} duration={500} >Test 1</Link></li>
+          {/* <li><Link activeClass="active" className="create" to="create" smooth duration={500} >Test 1</Link></li> */}
           <Header/>
           <Home name="home"/>
-          <ScrollCreate name="create" className="element"/>
+          <Create name="work" className="element"/>
           <hr/>
           <About/>
           <hr/>

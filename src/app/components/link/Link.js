@@ -6,7 +6,7 @@ import radium from 'radium';
 // wrap link to apply radium styles to it
 const RadiumLink = radium(RRLink);
 
-const Link = ({style, contents, linkTo = "/"}) => (
+const Link = ({style, contents, linkTo}) => (
   <RadiumLink style={style} className="icon" to={linkTo}> {contents} </RadiumLink>
 );
 
@@ -19,7 +19,7 @@ Link.propTypes = {
     PropTypes.array,
     PropTypes.object
   ]).isRequired,
-  linkTo: PropTypes.string
+  linkTo: PropTypes.string.isRequired
 };
 
 export default radium(Link);

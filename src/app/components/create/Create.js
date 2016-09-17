@@ -3,12 +3,16 @@ import radium from 'radium';
 import {widerThan, devices} from '../../theme/media';
 import {slantTitle} from '../../theme/styles';
 import reveal, {configurations} from '../scrollReveal/reveal';
-
+import anchor from '../scrollReveal/anchor';
 import newButton from './assets/newButton.png';
 import groupButton from './assets/groupButton.png';
 import trashButton from './assets/trashButton.png';
 
 const styles = {
+  component: {
+    paddingTop: '2rem',
+    paddingBottom: '2rem'
+  },
   createPhoto: {
     backgroundColor: '#efeff4',
     backgroundImage: `url(${groupButton})`,
@@ -63,10 +67,10 @@ const Description = () => (
 );
 
 // make a component that we apply scroll reveal to
-class ComponentToReveal extends Component {
+class Create extends Component {
   render() {
     return (
-      <section className="container">
+      <section className="container" style={styles.component}>
         <div className="row"> <Photo/> </div>
         <div className="row">
           <div className="column column-25">
@@ -84,18 +88,11 @@ class ComponentToReveal extends Component {
     );
   }
 }
-// apply scroll reveal
-const RevealedComponentToReveal = reveal(ComponentToReveal, configurations.fastUp);
 
-// wrap it in a div so that we can scroll to its final position
-class Create extends Component {
-  render() {
-    return (
-      <div id="create">
-        <RevealedComponentToReveal/>
-      </div>
-    );
-  }
-}
-
-export default radium(Create);
+// apply scroll reveal,
+// then anchor so that scroll events know where to scroll to
+export default anchor(
+  reveal(
+    Create,
+    configurations.fastUp),
+  "create");
