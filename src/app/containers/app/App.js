@@ -33,7 +33,7 @@ class App extends Component {
   constructor() {
     super();
     this.replaceRouteBasedOnScrollPosition = this.replaceRouteBasedOnScrollPosition.bind(this);
-    this.handleScroll = debounce(this.replaceRouteBasedOnScrollPosition, 300);
+    this.handleScroll = debounce(this.replaceRouteBasedOnScrollPosition, 150);
   }
 
   replaceRouteBasedOnScrollPosition(scrollTop) {
