@@ -36,15 +36,17 @@ class App extends Component {
     this.handleScroll = debounce(this.replaceRouteBasedOnScrollPosition, 150);
   }
 
-  replaceRouteBasedOnScrollPosition(scrollTop) {
+  replaceRouteBasedOnScrollPosition() {
+    // current Scroll Top
+    const scrollTop = (window.pageYOffset || document.documentElement.scrollTop) - (document.documentElement.clientTop || 0);
     // number of screens past the current scroll Top
     const work = this.workNode.getBoundingClientRect().top / window.innerHeight;
     const about = this.aboutNode.getBoundingClientRect().top / window.innerHeight;
 
-    // within 1/3 screen of top... a bit of a hack to prevent route from going immediately
+    // within 1/5 screen of top... a bit of a hack to prevent route from going immediately
     // to /work on mobile
-    const shouldForceHome = scrollTop < window.innerHeight / 3;
-
+    const shouldForceHome = scrollTop < window.innerHeight / 5;
+    console.log(`should force home? ${shouldForceHome}`);
     if (shouldForceHome) {
       if (location.pathname !== "/") {
         window.history.replaceState({}, "home", "/");
