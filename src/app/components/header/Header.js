@@ -11,7 +11,7 @@ const styles = {
     color: 'black',
     userSelect: 'none',
     lineHeight: '0',
-    fontWeight: '500'
+    pointerEvents: 'auto'
   },
   marginLeft: {
     marginLeft: '6rem'
@@ -22,10 +22,10 @@ const styles = {
   iconTypography: {
     fontStyle: 'italic',
     letterSpacing: '.1em',
-    color: 'black',
     fontWeight: '400'
   },
   navigation: {
+    pointerEvents: 'none',
     position: 'relative',
     padding: '2rem 0',
     zIndex: '9001',
@@ -44,7 +44,7 @@ const styles = {
 
 const WorkLink = () => (
   <Link
-    style={[styles.marginRight, styles.iconTypography]}
+    style={[styles.marginRight, styles.icon, styles.iconTypography]}
     contents={"work"}
     linkTo={"/work"}
     />
@@ -64,7 +64,7 @@ const HomeLink = () => (
 
 const AboutLink = () => (
   <Link
-    style={[styles.marginLeft, styles.iconTypography]}
+    style={[styles.marginLeft, styles.icon, styles.iconTypography]}
     contents={"about"}
     linkTo={"/about"}
     />
