@@ -19,24 +19,63 @@ import radium, {StyleRoot} from 'radium';
 import Scroll from 'react-scroll';
 const scroller = Scroll.scroller;
 
+function debounce(fn, after) {
+  let timer;
+  return function () {
+    if (timer !== undefined) {
+      clearTimeout(timer);
+    }
+    timer = setTimeout(fn, after);
+  };
+}
+
 class App extends Component {
-  handleScroll(event) {
-    console.log(event.srcElement.body.scrollTop);
-    const header = ReactDOM.findDOMNode(this.header).getBoundingClientRect().top;
-    const work = ReactDOM.findDOMNode(this.work).getBoundingClientRect().top;
-    const about = ReactDOM.findDOMNode(this.about).getBoundingClientRect().top;
-    console.log(`${header} / ${work} / ${about}`);
-    // window.history.replaceState({}, "test", "/test");
+  constructor() {
+    super();
+    this.replaceRouteBasedOnScrollPosition = this.replaceRouteBasedOnScrollPosition.bind(this);
+    this.handleScroll = debounce(this.replaceRouteBasedOnScrollPosition, 300);
+  }
+
+  replaceRouteBasedOnScrollPosition(scrollTop) {
+    // number of screens past the current scroll Top
+    const work = this.workNode.getBoundingClientRect().top / window.innerHeight;
+    const about = this.aboutNode.getBoundingClientRect().top / window.innerHeight;
+
+    // within 1/3 screen of top... a bit of a hack to prevent route from going immediately
+    // to /work on mobile
+    const shouldForceHome = scrollTop < window.innerHeight / 3;
+
+    if (shouldForceHome) {
+      if (location.pathname !== "/") {
+        window.history.replaceState({}, "home", "/");
+      }
+    // about is less than half a screen past the current scroll Top
+    } else if (about < 0.5) {
+      if (location.pathname !== "/about") {
+        window.history.replaceState({}, "about", "/about");
+      }
+    // work is less than half a screen past the current scroll Top
+    } else if (work < 0.5) {
+      if (location.pathname !== "/work") {
+        window.history.replaceState({}, "work", "/work");
+      }
+    // we are home
+    } else if (location.pathname !== "/") {
+      window.history.replaceState({}, "home", "/");
+    }
   }
 
   componentDidMount() {
-    console.log(this.props.routes[this.props.routes.length - 1].position);
-    // scroll immediately to route at position
+    // scroll to current position
     scroller.scrollTo(this.props.routes[this.props.routes.length - 1].position);
-    // listen to scroll to push state when necessary
+
+    // listen to scroll
     window.addEventListener('scroll', this.handleScroll);
 
-    console.log(window.innerHeight);
+    // find dom elements for detecting their scroll position
+    this.homeNode = ReactDOM.findDOMNode(this.home);
+    this.workNode = ReactDOM.findDOMNode(this.work);
+    this.aboutNode = ReactDOM.findDOMNode(this.about);
   }
 
   componentWillUnmount() {
