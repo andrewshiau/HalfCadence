@@ -49,7 +49,7 @@ const GithubLink = () => (
 const Description = () => (
   <span>
     <p>Aegis is a side-scrolling shooter set in a dystopian future.</p>
-    <p>Pilot a futuristic mech / spaceship hybrid to defeat the Empire and return peace to the world.</p>
+    <p>Team Sol's spin on the genre</p>
     <p>Aegis is built in lua using the LÖVE engine, in collaboration with my&nbsp;
       <a
         target="_blank"
