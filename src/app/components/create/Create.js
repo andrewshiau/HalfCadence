@@ -4,9 +4,7 @@ import {widerThan, devices} from '../../theme/media';
 import {slantTitle, paddedComponent} from '../../theme/styles';
 import reveal, {configurations} from '../scrollReveal/reveal';
 import anchor from '../scrollReveal/anchor';
-import newButton from './assets/newButton.png';
 import groupButton from './assets/groupButton.png';
-import trashButton from './assets/trashButton.png';
 
 const styles = {
   createPhoto: {
@@ -16,10 +14,8 @@ const styles = {
     backgroundRepeat: `no-repeat`,
     backgroundPosition: `center`,
     marginBottom: '4rem',
-    [widerThan(devices.mobile)]: {
-      backgroundSize: `auto`,
-      backgroundImage: `url(${newButton}), url(${groupButton}), url(${trashButton})`,
-      backgroundPosition: `left 2rem top 2rem, center, right 2rem bottom 2rem`
+    [widerThan(500)]: {
+      backgroundSize: `auto`
     }
   }
 };
