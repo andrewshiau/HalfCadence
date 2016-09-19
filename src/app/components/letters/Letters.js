@@ -35,7 +35,8 @@ const TrailerLink = () => (
   </a>
 );
 
-const Shoe = (<a target="_blank" href="https://github.com/brianshiau" title="Brian on Github">Brian Shiau</a>);
+const Shoe = () => (<a target="_blank" href="https://github.com/brianshiau" title="Brian on Github">Brian Shiau</a>);
+
 const Description = () => (
   <span>
     <p>10 Letters is an iOS game about collecting.</p>
