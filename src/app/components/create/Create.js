@@ -8,7 +8,7 @@ import groupButton from './assets/groupButton.png';
 
 const styles = {
   createPhoto: {
-    backgroundColor: '#efeff4',
+    backgroundColor: '#ECF0F1',
     backgroundImage: `url(${groupButton})`,
     backgroundSize: `50%`,
     backgroundRepeat: `no-repeat`,

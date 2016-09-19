@@ -46,44 +46,16 @@ const GithubLink = () => (
   </a>
 );
 
+const CS255 = () => (<a target="_blank" href="http://gaming.jhu.edu/~phf/2016/fall/cs255" title="CS 255 Class Page">CS255</a>);
+const Andy = () => (<a target="_blank" href="https://github.com/jungyang" title="Andy on Github">Andy</a>);
+const Nathaniel = () => (<a target="_blank" href="https://github.com/Snaboflafer" title="Nathaniel on Github">Nathaniel</a>);
+const Steve = () => (<a target="_blank" href="https://github.com/sausti" title="Steve on Github">Steve</a>);
+
 const Description = () => (
   <span>
     <p>Aegis is a side-scrolling shooter set in a dystopian future.</p>
-    <p>Team Sol's spin on the genre</p>
-    <p>Aegis is built in lua using the LÖVE engine, in collaboration with my&nbsp;
-      <a
-        target="_blank"
-        href="http://gaming.jhu.edu/~phf/2016/fall/cs255"
-        title="CS 255 Class Page"
-        >
-        CS255
-      </a>
-      &nbsp;teammates&nbsp;
-      <a
-        target="_blank"
-        href="https://github.com/jungyang"
-        title="Andy on Github"
-        >
-        Andy
-      </a>
-      ,&nbsp;
-      <a
-        target="_blank"
-        href="https://github.com/Snaboflafer"
-        title="Nathaniel on Github"
-        >
-        Nathaniel
-      </a>
-      , and&nbsp;
-      <a
-        target="_blank"
-        href="https://github.com/sausti"
-        title="Steve on Github"
-        >
-        Steve
-      </a>
-      .
-    </p>
+    <p>Transform between rugged mech warrior and lightsome scapeship to overthrow the tyrannical empire.</p>
+    <p>Aegis is built in lua using the LÖVE engine, in collaboration with my <CS255/> teammates <Andy/>, <Nathaniel/>, and <Steve/>.</p>
   </span>
 );
 

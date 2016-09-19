@@ -35,19 +35,12 @@ const TrailerLink = () => (
   </a>
 );
 
+const Shoe = (<a target="_blank" href="https://github.com/brianshiau" title="Brian on Github">Brian Shiau</a>);
 const Description = () => (
   <span>
     <p>10 Letters is an iOS game about collecting.</p>
     <p>Inspired by the thrill of snatching an awesome username in the hottest new MMO, we distilled it to its purest form.</p>
-    <p>10 Letters is built in native xCode with Objective C and is a collaboration between myself and&nbsp;
-      <a
-        target="_blank"
-        href="https://github.com/brianshiau"
-        title="Brian on Github"
-        >
-        Brian Shiau
-      </a>
-      .
+    <p>10 Letters is built in native xCode with Objective C and is a collaboration between myself and <Shoe/>.
     </p>
   </span>
 );
