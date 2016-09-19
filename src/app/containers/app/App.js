@@ -10,6 +10,7 @@ import Header from '../../components/header/Header';
 import Home from '../../components/home/Home';
 import Create from '../../components/create/Create';
 import Letters from '../../components/letters/Letters';
+import Aegis from '../../components/aegis/Aegis';
 import About from '../../components/about/About';
 import Footer from '../../components/footer/Footer';
 
@@ -117,6 +118,8 @@ class App extends Component {
             />
           <hr/>
           <Letters/>
+          <hr/>
+          <Aegis/>
           <hr/>
           <About
             ref={function (c) {
