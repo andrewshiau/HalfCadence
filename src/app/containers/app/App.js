@@ -9,6 +9,7 @@ import './app.styl';
 import Header from '../../components/header/Header';
 import Home from '../../components/home/Home';
 import Create from '../../components/create/Create';
+import Letters from '../../components/letters/Letters';
 import About from '../../components/about/About';
 import Footer from '../../components/footer/Footer';
 
@@ -43,10 +44,9 @@ class App extends Component {
     const work = this.workNode.getBoundingClientRect().top / window.innerHeight;
     const about = this.aboutNode.getBoundingClientRect().top / window.innerHeight;
 
-    // within 1/5 screen of top... a bit of a hack to prevent route from going immediately
+    // within 1/8 screen of top... a bit of a hack to prevent route from going immediately
     // to /work on mobile
-    const shouldForceHome = scrollTop < window.innerHeight / 5;
-    console.log(`should force home? ${shouldForceHome}`);
+    const shouldForceHome = scrollTop < window.innerHeight / 8;
     if (shouldForceHome) {
       if (location.pathname !== "/") {
         window.history.replaceState({}, "home", "/");
@@ -115,6 +115,8 @@ class App extends Component {
               that.work = c;
             }}
             />
+          <hr/>
+          <Letters/>
           <hr/>
           <About
             ref={function (c) {
