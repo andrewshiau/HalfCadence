@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import radium from 'radium';
-import {widerThan, devices} from '../../theme/media';
+import {widerThan} from '../../theme/media';
 import {slantTitle, paddedComponent} from '../../theme/styles';
 import reveal, {configurations} from '../scrollReveal/reveal';
 import anchor from '../scrollReveal/anchor';
