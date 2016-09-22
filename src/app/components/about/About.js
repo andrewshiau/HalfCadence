@@ -64,7 +64,7 @@ const BlogLink = () => (
 const ResumeLink = () => (
   <a
     target="_blank"
-    href="https://google.com/"
+    href="https://docs.google.com/document/d/1IgF7YTc4p7QYQe31GvFUVp8N0b_mxgPqWyA0hDjPu4c"
     title="Andrew's Resume"
     style={slantTitle}
     >
@@ -74,7 +74,7 @@ const ResumeLink = () => (
 
 const ContactLink = () => (
   <a
-    href="mailto:andrew-s@comcast.net"
+    href="mailto:andrew@halfcadence.io"
     title="Email Me"
     style={slantTitle}
     >

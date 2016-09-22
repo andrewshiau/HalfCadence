@@ -24,16 +24,8 @@ const NoRadiumPhoto = () => (
 );
 const Photo = radium(NoRadiumPhoto);
 
-const TrailerLink = () => (
-  <a
-    target="_blank"
-    href="https://vimeo.com/158765955"
-    title="10 Letters Trailer"
-    style={slantTitle}
-    >
-    Trailer
-  </a>
-);
+const Trailer = () => (
+  <a target="_blank" href="https://vimeo.com/158765955" title="10 Letters Trailer" style={slantTitle}>Trailer</a>);
 
 const Shoe = () => (<a target="_blank" href="https://github.com/brianshiau" title="Brian on Github">Brian Shiau</a>);
 
@@ -56,7 +48,7 @@ class Letters extends Component {
           <div className="column column-25">
             <h6 style={slantTitle}>10 Letters</h6>
             <ul>
-              <li><TrailerLink/></li>
+              <li><Trailer/></li>
             </ul>
           </div>
           <div className="column column-75">

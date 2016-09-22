@@ -24,28 +24,10 @@ const NoRadiumPhoto = () => (
 );
 const Photo = radium(NoRadiumPhoto);
 
-const TrailerLink = () => (
-  <a
-    target="_blank"
-    href="https://vimeo.com/160977283"
-    title="Aegis Trailer"
-    style={slantTitle}
-    >
-    Trailer
-  </a>
-);
-
-const GithubLink = () => (
-  <a
-    target="_blank"
-    href="https://github.com/Snaboflafer/AegisGame"
-    title="Create on Github"
-    style={slantTitle}
-    >
-    Github
-  </a>
-);
-
+const Trailer = () => (
+  <a target="_blank" href="https://vimeo.com/160977283" title="Aegis Trailer" style={slantTitle}>Trailer</a>);
+const Github = () => (
+  <a target="_blank" href="https://github.com/Snaboflafer/AegisGame" title="Create on Github" style={slantTitle}>Github</a>);
 const CS255 = () => (<a target="_blank" href="http://gaming.jhu.edu/~phf/2016/fall/cs255" title="CS 255 Class Page">CS255</a>);
 const Andy = () => (<a target="_blank" href="https://github.com/jungyang" title="Andy on Github">Andy</a>);
 const Nathaniel = () => (<a target="_blank" href="https://github.com/Snaboflafer" title="Nathaniel on Github">Nathaniel</a>);
@@ -54,7 +36,7 @@ const Steve = () => (<a target="_blank" href="https://github.com/sausti" title="
 const Description = () => (
   <span>
     <p>Aegis is a side-scrolling shooter set in a dystopian future.</p>
-    <p>Transform between rugged mech warrior and lightsome scapeship to overthrow the tyrannical empire.</p>
+    <p>Transform between rugged mech warrior and lightsome scape fighter to overthrow the tyrannical empire.</p>
     <p>Aegis is built in lua using the LÖVE engine, in collaboration with my <CS255/> teammates <Andy/>, <Nathaniel/>, and <Steve/>.</p>
   </span>
 );
@@ -69,8 +51,8 @@ class Aegis extends Component {
           <div className="column column-25">
             <h6 style={slantTitle}>Aegis</h6>
             <ul>
-              <li><TrailerLink/></li>
-              <li><GithubLink/></li>
+              <li><Trailer/></li>
+              <li><Github/></li>
             </ul>
           </div>
           <div className="column column-75">
