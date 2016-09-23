@@ -33,7 +33,7 @@ const Description = () => (
   <span>
     <p>10 Letters is an iOS game about collecting.</p>
     <p>Inspired by the thrill of snatching an awesome username in the hottest new MMO, we distilled it to its purest form.</p>
-    <p>10 Letters is built in native xCode with Objective C and is a collaboration between myself and <Shoe/>.
+    <p>10 Letters is built in native xCode with Objective C and is a collaboration between <Shoe/> and me.
     </p>
   </span>
 );
