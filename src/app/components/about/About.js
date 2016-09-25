@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import radium from 'radium';
 import {widerThan, devices} from '../../theme/media';
-import {slantTitle, paddedComponent} from '../../theme/styles';
+import {slantTitle, lastPaddedComponent} from '../../theme/styles';
 import reveal, {configurations} from '../scrollReveal/reveal';
 
 import image from './assets/rightGrey.jpg';
@@ -85,7 +85,7 @@ const ContactLink = () => (
 class About extends Component {
   render() {
     return (
-      <section className="container hc-bottom" id="about" style={paddedComponent}>
+      <section className="container hc-bottom" id="about" style={lastPaddedComponent}>
         <div className="row" style={styles.reverseWhenLarge}>
           <div className="column">
             <div className="image-container thin-image-container" style={styles.aboutPhoto}>

@@ -11,6 +11,7 @@ const styles = {
 
 const Footer = () => (
   <footer style={styles.footer}>
+    <hr/>
     <p style={styles.footerText}>half cadence by&nbsp;
       <a
         target="_blank"

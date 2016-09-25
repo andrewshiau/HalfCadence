@@ -116,17 +116,13 @@ class App extends Component {
               that.work = c;
             }}
             />
-          <hr/>
           <Letters/>
-          <hr/>
           <Aegis/>
-          <hr/>
           <About
             ref={function (c) {
               that.about = c;
             }}
             />
-          <hr/>
           <Footer/>
         </div>
       </StyleRoot>

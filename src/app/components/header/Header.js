@@ -27,7 +27,7 @@ const styles = {
   navigation: {
     pointerEvents: 'none',
     position: 'relative',
-    padding: '2rem 0',
+    padding: '2rem 0 0',
     zIndex: '9001',
     display: 'flex',
     flexDirection: 'row',
@@ -37,7 +37,7 @@ const styles = {
     right: '0',
     [widerThan(devices.mobile)]: {
       position: 'fixed',
-      padding: '5vh 0'
+      padding: '5vh 0 0'
     }
   }
 };
