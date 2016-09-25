@@ -68,6 +68,6 @@ class Aegis extends Component {
 // then anchor so that scroll events know where to scroll to
 export default anchor(
   reveal(
-    Aegis,
+    radium(Aegis),
     configurations.fastUp),
   "aegis");

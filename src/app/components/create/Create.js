@@ -85,6 +85,6 @@ class Create extends Component {
 // then anchor so that scroll events know where to scroll to
 export default anchor(
   reveal(
-    Create,
+    radium(Create),
     configurations.fastUp),
   "work");

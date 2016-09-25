@@ -64,6 +64,6 @@ class Letters extends Component {
 // then anchor so that scroll events know where to scroll to
 export default anchor(
   reveal(
-    Letters,
+    radium(Letters),
     configurations.fastUp),
   "letters");
