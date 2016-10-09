@@ -63,6 +63,8 @@ npm install
 npm update
 
 # rebuild /dist
+# this step is pretty shit right because I haven't figured out how to stop if building fails
+# also I should probably build into a temp folder and only replace dist if the build works
 echo "${purple}Rebuilding /dist...${nocolor}"
 npm run build
 if [ $? -ne 0 ]; then
