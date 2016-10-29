@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import radium from 'radium';
-import {slantTitle, paddedComponent} from '../../theme/styles';
+import {projectTitle, projectLink, paddedComponent} from '../../theme/styles';
 import reveal, {configurations} from '../scrollReveal/reveal';
 import anchor from '../scrollReveal/anchor';
 import aegisMockup from './assets/aegisMockup.png';
@@ -25,9 +25,9 @@ const NoRadiumPhoto = () => (
 const Photo = radium(NoRadiumPhoto);
 
 const Trailer = () => (
-  <a target="_blank" href="https://vimeo.com/160977283" title="Aegis Trailer" style={slantTitle}>Trailer</a>);
+  <a target="_blank" href="https://vimeo.com/160977283" title="Aegis Trailer" style={projectLink}>Trailer</a>);
 const Github = () => (
-  <a target="_blank" href="https://github.com/Snaboflafer/AegisGame" title="Create on Github" style={slantTitle}>Github</a>);
+  <a target="_blank" href="https://github.com/Snaboflafer/AegisGame" title="Create on Github" style={projectLink}>Github</a>);
 const CS255 = () => (<a target="_blank" href="http://gaming.jhu.edu/~phf/2016/fall/cs255" title="CS 255 Class Page">CS255</a>);
 const Andy = () => (<a target="_blank" href="https://github.com/jungyang" title="Andy on Github">Andy</a>);
 const Nathaniel = () => (<a target="_blank" href="https://github.com/Snaboflafer" title="Nathaniel on Github">Nathaniel</a>);
@@ -49,7 +49,7 @@ class Aegis extends Component {
         <div className="row"> <Photo/> </div>
         <div className="row">
           <div className="column column-25">
-            <h6 style={slantTitle}>Aegis</h6>
+            <h6 style={projectTitle}>Aegis</h6>
             <ul>
               <li><Trailer/></li>
               <li><Github/></li>

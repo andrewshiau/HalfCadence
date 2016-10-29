@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import radium from 'radium';
-import {slantTitle, paddedComponent} from '../../theme/styles';
+import {projectTitle, projectLink, paddedComponent} from '../../theme/styles';
 import reveal, {configurations} from '../scrollReveal/reveal';
 import anchor from '../scrollReveal/anchor';
 import lettersMockup from './assets/lettersMockup.png';
@@ -25,7 +25,7 @@ const NoRadiumPhoto = () => (
 const Photo = radium(NoRadiumPhoto);
 
 const Trailer = () => (
-  <a target="_blank" href="https://vimeo.com/158765955" title="10 Letters Trailer" style={slantTitle}>Trailer</a>);
+  <a target="_blank" href="https://vimeo.com/158765955" title="10 Letters Trailer" style={projectLink}>Trailer</a>);
 
 const Shoe = () => (<a target="_blank" href="https://github.com/brianshiau" title="Brian on Github">Brian Shiau</a>);
 
@@ -46,7 +46,7 @@ class Letters extends Component {
         <div className="row"> <Photo/> </div>
         <div className="row">
           <div className="column column-25">
-            <h6 style={slantTitle}>10 Letters</h6>
+            <h6 style={projectTitle}>10 Letters</h6>
             <ul>
               <li><Trailer/></li>
             </ul>

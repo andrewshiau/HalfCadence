@@ -20,7 +20,6 @@ const styles = {
     marginRight: '6rem'
   },
   iconTypography: {
-    fontStyle: 'italic',
     letterSpacing: '.1em',
     fontWeight: '400'
   },

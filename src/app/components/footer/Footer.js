@@ -16,7 +16,7 @@ const Footer = () => (
       <a
         target="_blank"
         href="https://instagram.com/half_cadence"
-        title="email me"
+        title="Andrew's Instagram"
         >
         andrew shiau
       </a>

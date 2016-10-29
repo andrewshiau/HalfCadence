@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import radium from 'radium';
 import {widerThan, devices} from '../../theme/media';
-import {slantTitle, lastPaddedComponent} from '../../theme/styles';
+import {projectTitle, projectLink, lastPaddedComponent} from '../../theme/styles';
 import reveal, {configurations} from '../scrollReveal/reveal';
 
 import image from './assets/rightGrey.jpg';
@@ -44,7 +44,7 @@ const GithubLink = () => (
     target="_blank"
     href="https://github.com/andrewshiau"
     title="Andrew's Github"
-    style={slantTitle}
+    style={projectLink}
     >
     Github
   </a>
@@ -55,7 +55,7 @@ const BlogLink = () => (
     target="_blank"
     href="https://andrewshiau.wordpress.com/"
     title="Andrew's Blog"
-    style={slantTitle}
+    style={projectLink}
     >
     Blog
   </a>
@@ -66,7 +66,7 @@ const ResumeLink = () => (
     target="_blank"
     href="https://docs.google.com/document/d/1IgF7YTc4p7QYQe31GvFUVp8N0b_mxgPqWyA0hDjPu4c"
     title="Andrew's Resume"
-    style={slantTitle}
+    style={projectLink}
     >
     Resume
   </a>
@@ -76,7 +76,7 @@ const ContactLink = () => (
   <a
     href="mailto:andrew@halfcadence.io"
     title="Email Me"
-    style={slantTitle}
+    style={projectLink}
     >
     Contact
   </a>
@@ -92,7 +92,7 @@ class About extends Component {
             </div>
           </div>
           <div className="column" style={styles.flakyText}>
-            <h6 style={slantTitle}>about</h6>
+            <h6 style={projectTitle}>about</h6>
             <Description/>
             <ul>
               <li><GithubLink/></li>

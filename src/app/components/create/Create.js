@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import radium from 'radium';
 import {widerThan} from '../../theme/media';
-import {slantTitle, paddedComponent} from '../../theme/styles';
+import {projectTitle, projectLink, paddedComponent} from '../../theme/styles';
 import reveal, {configurations} from '../scrollReveal/reveal';
 import anchor from '../scrollReveal/anchor';
 import groupButton from './assets/groupButton.png';
@@ -33,7 +33,7 @@ const TrailerLink = () => (
     target="_blank"
     href="https://vimeo.com/166755544"
     title="Create Trailer"
-    style={slantTitle}
+    style={projectLink}
     >
     Trailer
   </a>
@@ -44,7 +44,7 @@ const GithubLink = () => (
     target="_blank"
     href="https://github.com/andrewshiau/create"
     title="Create on Github"
-    style={slantTitle}
+    style={projectLink}
     >
     Github
   </a>
@@ -66,7 +66,7 @@ class Create extends Component {
         <div className="row"> <Photo/> </div>
         <div className="row">
           <div className="column column-25">
-            <h6 style={slantTitle}>Create</h6>
+            <h6 style={projectTitle}>Create</h6>
             <ul>
               <li><TrailerLink/></li>
               <li><GithubLink/></li>
