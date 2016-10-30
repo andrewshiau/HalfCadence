@@ -46,7 +46,7 @@ class Letters extends Component {
         <div className="row"> <Photo/> </div>
         <div className="row">
           <div className="column column-25">
-            <h6 style={projectTitle}>10 Letters</h6>
+            <h5 style={projectTitle}>10 Letters</h5>
             <ul>
               <li><Trailer/></li>
             </ul>

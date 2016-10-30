@@ -9,6 +9,7 @@ p
   margin-bottom 2rem
   letter-spacing 0.04em
 
+// h1 and h6 styles (I forget why they are partially combined)
 h1, h6
   margin-bottom: 1.0rem
   margin-top: 0
@@ -33,6 +34,16 @@ h6
   line-height 1.4
   +widerthan(mobile)
     font-size 2rem
+
+// small title for projects
+h5
+  font-weight 400
+  font-size 2rem
+  margin-top 0
+  margin-bottom 0.7rem
+  +widerthan(mobile)
+    font-size 2.3rem
+    margin-bottom 1.3rem
 
 // customize selection
 ::selection

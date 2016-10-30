@@ -66,7 +66,7 @@ class Create extends Component {
         <div className="row"> <Photo/> </div>
         <div className="row">
           <div className="column column-25">
-            <h6 style={projectTitle}>Create</h6>
+            <h5 style={projectTitle}>Create</h5>
             <ul>
               <li><TrailerLink/></li>
               <li><GithubLink/></li>

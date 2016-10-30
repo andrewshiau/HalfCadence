@@ -92,7 +92,7 @@ class About extends Component {
             </div>
           </div>
           <div className="column" style={styles.flakyText}>
-            <h6 style={projectTitle}>about</h6>
+            <h5 style={projectTitle}>about</h5>
             <Description/>
             <ul>
               <li><GithubLink/></li>
