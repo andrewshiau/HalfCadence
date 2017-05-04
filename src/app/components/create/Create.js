@@ -42,7 +42,7 @@ const TrailerLink = () => (
 const GithubLink = () => (
   <a
     target="_blank"
-    href="https://github.com/andrewshiau/create"
+    href="https://github.com/halfcadence/create"
     title="Create on Github"
     style={projectLink}
     >

@@ -42,7 +42,7 @@ const Description = () => (
 const GithubLink = () => (
   <a
     target="_blank"
-    href="https://github.com/andrewshiau"
+    href="https://github.com/halfcadence"
     title="Andrew's Github"
     style={projectLink}
     >
